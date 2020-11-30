@@ -12,21 +12,22 @@
     
     <br><br><br><br><br><br><br><br>
     <div class=container style="background: linear-gradient(to left, #000000,  #202020);">
-    <h1 style="font-size: 50px; color: white;"> Nombre : {{ game.nombre}}</h1>
+    <h1 style="font-size: 50px; color: white;"> Usuario : {{ usuario.usuario}}</h1>
     <br>
     
-    <p style= color:white;><strong>Código: </strong> {{game.cod}} </p>
-    <p style= color:white;><strong>Creador/es: </strong> {{game.creador}}</p>
-    <p style= color:white;><strong>Videojuego: </strong> {{game.nombre}}</p>
-    <p style= color:white;><strong>Descripción: </strong> {{game.descripcion}}</p>
+    <p style= color:white;><strong>Rut: </strong> {{usuario.rut}} </p>
+    <p style= color:white;><strong>Correo: </strong> {{usuario.correo}}</p>
+    <p style= color:white;><strong>Clave: </strong> {{usuario.clave}}</p>
     </div>
 
     <footer class="footer" style="text-align: right; margin-right: 40px;">
         <br><br><br><br><br><br><br><br><br>
-        <a href="{% url 'games'  %}"> Volver atrás </a>
+        <a href="{% url 'usuarios'  %}"> Volver atrás </a>
     
     </footer>
 
 
+
 </body>
+
 {% endblock %}

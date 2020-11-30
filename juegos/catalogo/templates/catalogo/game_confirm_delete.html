@@ -1,13 +1,30 @@
-{% extends base_generic.html %}
+{% extends "base_generic.html" %}
 
 {% block content %}
 
-<h1>Eliminar información de Videojuego.</h1>
-<p> ¿Estás seguro que quieres eliminar la información de éste juego: {{game}} ?</p>
+{% load static %}
+<link rel="stylesheet" href="css/otroestilo">
 
+<body style="text-align: center; background-color: black;"> <br><br>
+<h1 style="color: white;">Eliminar información de Videojuego.</h1> <br><br><br><br><br><br><br><br><br><br><br>
 
+<div class= container style="background: linear-gradient(to left, #000000,  #202020);" > <br><br>
+<h4 style="color: white;"> ¿Estás seguro que quieres eliminar la información de: {{game.nombre}} ?</h4>
 <form action="" method="post">
-    {% csrf_token %}
-    <input type="submit" action="Delete">
+    {% csrf_token %} <br>
+    <input type="submit" class="btn btn-secondary" action="Delete" value="Eliminar"> <br><br><br><br>
 </form>
+</div>
+
+<footer class="footer" style="text-align: right; margin-right: 40px;">
+    <br><br><br><br><br><br><br><br><br>
+    <a style="font-size: 12px; color: white;" href="{% url 'games'  %}"> Volver atrás </a>
+
+</footer>
+
+
+
+</body>
+
+
 {% endblock %}
