@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<body style="background:#000000">
+<h1>Creando Información de Usuarios.</h1> <br><br><br><br><br><br><br><br><br>
+<div class="container d-flex flex-column flex-md-row justify-content-between" style="background: linear-gradient(to bottom left, #000000,  #202020);">
+<form method="post"> <br><br>
+    {% csrf_token %}
+    <table style="color: darkmagenta;"> <br>
+    {{ form.as_table }}
+    </table> <br>
+    <input class="btn btn-secondary" type="submit" value="Crear" /> <br><br><br><br>
+</form>
+</div>
+
+<footer class="footer" style="text-align: right; margin-right: 40px;">
+    <br><br><br><br><br><br><br>
+    <a style="color: white; font-size: 12px;" href="{% url 'usuarios'  %}"> Volver atrás </a>
+
+</footer>
+
+</body>
+{% endblock %}

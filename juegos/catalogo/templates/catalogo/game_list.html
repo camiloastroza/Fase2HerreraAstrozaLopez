@@ -1,27 +1,31 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <head>
-    <h1 id=black >Lista de Videojuegos.</h1>
-
     {% load static %}
     <link rel="stylesheet" href="css/styles">
-    </head>
 
-    <body id=color2>
-    {% if game_list %}
-    <ul>
+      <body style="background-color: black;">
+      <h1 style="color: white;" >Lista de Videojuegos.</h1>
 
-      {% for game in game_list %}
-      <li>
-        <a href="{{ game.get_absolute_url }}">{{ game.nombre }}</a> ({{game.creador}}) 
-      </li>
-      {% endfor %}
 
-    </ul>
+    
 
-    {% else %}
-      <p>No hay juegos en el sistema.</p>
-    {% endif %}       
-  </body>
+    
+      {% if game_list %}
+
+        {% for game in game_list %}
+      
+          <div class=container style="background: linear-gradient(to bottom left, #000000,  #202020);">
+          <a style="font-size: 20px; color: darkmagenta;"href="{{ game.get_absolute_url}}"> {{game.nombre}}</a> <br> <a style="color: white;">{{game.creador}}</a>
+          <a href="{% url 'game_update' game.cod %"> <input class="btn btn-secondary offset-md-1"type="button" value="Editar">  </a>
+          <a href="{% url 'game_delete' game.cod %}"> <input class="btn btn-secondary"type="button" value="Eliminar"></a>
+          </div>
+      
+        {% endfor %}
+
+
+      {% else %}
+        <p>No hay juegos en el sistema.</p>
+      {% endif %}  
+      </body>
 {% endblock %}
