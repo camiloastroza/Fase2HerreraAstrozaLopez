@@ -7,14 +7,21 @@
 
 
 .color2 {
-    color : beige;
+    color : rgb(148, 120, 59);
 }
 
 .color1{
-    color : black;
+    color : #99ebff;
 }
 
 h1{
     color: black;
 }
 
+.text {
+    color: #99ebff;
+}
+
+.k {
+    border-style: solid;
+}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Game
+from .models import Usuario
 from django.views import generic
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -65,15 +66,45 @@ class GameDetailView(generic.DetailView):
 
 
 
-
 class GameCreate(CreateView):
     model= Game
     fields= '__all__'
+    success_url = reverse_lazy('games')
 
 class GameUpdate(UpdateView):
     model= Game
-    fields= ['Nombre','Creador','Descripción']
+    fields= ['cod','nombre','creador','descripción']
 
 class GameDelete(DeleteView):
     model= Game
     success_url = reverse_lazy('games')
+
+
+
+
+
+
+class UsuarioListView(generic.ListView):
+    model= Usuario
+    paginate_by= 10
+
+class UsuarioDetailView(generic.DetailView):
+    model= Usuario
+
+
+class UsuarioCreate(CreateView):
+    model= Usuario
+    fields= '__all__'
+    success_url = reverse_lazy('usuarios')
+
+class UsuarioUpdate(UpdateView):
+    model= Usuario
+    fields= ['rut','correo','usuario','clave']
+    success_url = reverse_lazy('usuarios')
+
+class UsuarioDelete(DeleteView):
+    model= Usuario
+    success_url = reverse_lazy('usuarios')
+
+
+
